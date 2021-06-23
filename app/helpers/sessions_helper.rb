@@ -14,9 +14,7 @@ module SessionsHelper
   end
 
   def block_access
-    if current_user.present?
-      redirect_to users_path
-    end
+    redirect_to root_path unless logged_in?
   end
 
   def logged_in?

@@ -1,8 +1,4 @@
 class SessionsController < ApplicationController
-  include SessionsHelper
-
-  before_action :block_access, except: [:destroy]
-
   def create
     @user = User.find_by(email: params[:session][:email].downcase)
 
