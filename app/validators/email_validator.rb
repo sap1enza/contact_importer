@@ -4,6 +4,6 @@ class EmailValidator < ApplicationValidator
   def validate_each(record, attribute, value)
     return if value =~ VALID_EMAIL_FORMAT
 
-    validate!(record, attribute, options)
+    super
   end
 end

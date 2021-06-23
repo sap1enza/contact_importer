@@ -4,6 +4,6 @@ class NonSpecialCharactersValidator < ApplicationValidator
   def validate_each(record, attribute, value)
     return if value =~ VALID_FORMAT
 
-    validate!(record, attribute, options)
+    super
   end
 end
