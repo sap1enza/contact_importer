@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Koombea</title>
+    <title>Contact Importer</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Contact Importer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsingNavbar3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse w-100" id="collapsingNavbar3">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="<%= root_path %>">Home</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav ms-auto w-100 justify-content-end">
+
+            <% unless logged_in? %>
+              <%= form_for :session, url: sign_in_path do |f| %>
+                <div class="row">
+                  <div class="col">
+                    <%= f.email_field :email, class: "form-control", placeholder: "Email" %>
+                  </div>
+
+                  <div class="col">
+                    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+                  </div>
+
+                  <div class="col">
+                    <%= f.submit "Sign in", class: "btn btn-success" %>
+                    <a href="<%= new_user_path %>" class="btn btn-light">Sign Up</a>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <div class="row">
+                <div class="col">
+                  <span class="nav-link"><%= current_user.email %></span>
+                </div>
+
+                <div class="col">
+                  <%= button_to "Log out", sign_out_path, method: "delete", class: "btn btn-danger" %>
+                </div>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-4">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
