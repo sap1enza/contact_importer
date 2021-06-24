@@ -1,24 +1,19 @@
-# README
+# Contact Importer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sample `Contact Importer` project
 
-Things you may want to cover:
+- [x] Simple Login/Logout using `has_secure_password`
+- [x] CSV file import built within two steps: first to check and match respective columns and last to queue the job
+- [x] Use `Custom Validators` to create specific business validations
+- [x] `Import` model to save status and contacts/errors for imports
 
-* Ruby version
 
-* System dependencies
+### Running the Project
 
-* Configuration
+- `bundle install`
+- `bin/setup`
+- `rails s`
 
-* Database creation
+### Running Specs
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `rspec`
