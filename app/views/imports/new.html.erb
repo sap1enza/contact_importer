@@ -1,0 +1,14 @@
+<%= form_for :import, url: imports_path, html: { id: 'js-import' } do |f| %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
+  <div class="form-group" id="js-import-step-1">
+      <%= f.label :file, 'Upload CSV File' %>
+      <%= f.file_field :file, class: 'form-control-file', required: true %>
+  </div>
+
+  <table class="table" id="js-import-step-2" style="display: none"></table>
+
+  <div class="form-group mt-4">
+      <%= f.submit 'Parse Columns', class: 'btn btn-primary', id: 'js-import-submit-btn' %>
+  </div>
+<% end %>

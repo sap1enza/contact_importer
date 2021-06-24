@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :users, only: %i[show new create]
-  resources :uploads, only: %i[index]
+
+  resources :imports, only: %i[new index]
+
+  post 'import', to: 'imports#create'
+  post 'imports/get_headers', to: 'imports#get_headers'
 
   post   'sign_in',  to: 'sessions#create'
   delete 'sign_out', to: 'sessions#destroy'
