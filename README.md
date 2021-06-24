@@ -7,6 +7,15 @@ Sample `Contact Importer` project
 - [x] Use `Custom Validators` to create specific business validations
 - [x] `Import` model to save status and contacts/errors for imports
 
+### Heroku Check
+
+- https://sapienza-contact-importer.herokuapp.com/
+
+> Sample User
+
+> **Email**: test@test.com
+
+> **Password**: testtest
 
 ### Running the Project
 
