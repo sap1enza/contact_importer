@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  resources :users, only: %i[show new create]
+  resources :users, only: %i[new create]
 
-  resources :imports, only: %i[new index]
+  resources :imports, only: %i[new index show]
 
   post 'import', to: 'imports#create'
   post 'imports/get_headers', to: 'imports#get_headers'

@@ -1,0 +1,28 @@
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Birthdate</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Address</th>
+      <th scope="col">Credit Card</th>
+      <th scope="col">Franchise</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <th scope="row"><%= contact.name %></th>
+        <td><%= contact.email %></td>
+        <td><%= contact.birthdate %></td>
+        <td><%= contact.phone %></td>
+        <td><%= contact.address %></td>
+        <td><%= contact.credit_card_digits %></td>
+        <td><%= contact.franchise %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate(@contacts) %>

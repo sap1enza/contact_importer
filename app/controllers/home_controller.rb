@@ -1,3 +1,5 @@
 class HomeController < ApplicationController
-  def index; end
+  def index
+    @contacts = Contact.order(created_at: :desc).paginate(page: params[:page])
+  end
 end

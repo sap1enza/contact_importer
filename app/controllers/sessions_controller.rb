@@ -4,14 +4,13 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:session][:password])
       sign_in(@user)
-      flash[:success] = 'Authenticated Successfully'
 
-      redirect_to @user
+      flash[:success] = 'Authenticated Successfully'
     else
       flash[:warning] = 'Invalid Credentials'
-
-      redirect_to root_path
     end
+
+    redirect_to root_path
   end
 
   def destroy

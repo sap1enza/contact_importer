@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.0'
 
 gem 'bootstrap', '~> 5.0.1'
+gem 'credit_card_validations'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'rexml'
@@ -21,6 +22,7 @@ gem 'jquery-rails'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+gem 'will_paginate', '~> 3.3.0'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

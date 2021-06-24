@@ -1,0 +1,23 @@
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Status</th>
+      <th scope="col">Contacts</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row"><%= @import.status %></th>
+      <td>
+        <% @import.contacts.each do |contact| %>
+          <ul>
+            <li><%= contact["object"]  %></li>
+            <li><%= contact["errors"]  %></li>
+          </ul>
+        <% end %>
+      </td>
+      <td><%= @import.created_at %></td>
+    </tr>
+  </tbody>
+</table>

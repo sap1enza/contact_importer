@@ -1,1 +1,22 @@
-<%= link_to 'Import New', new_import_path, class: 'btn btn-primary' %>
+<%= link_to 'New Import', new_import_path, class: 'btn btn-primary' %>
+
+<table class="table mt-4">
+  <thead>
+    <tr>
+      <th scope="col">Status</th>
+      <th scope="col">Contacts</th>
+      <th scope="col">Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @imports.each do |import| %>
+      <tr>
+        <th scope="row"><%= import.status %></th>
+        <td><%= link_to 'Check', import_path(import.id) %></td>
+        <td><%= import.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= will_paginate(@imports) %>

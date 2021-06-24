@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   $("#js-import").submit(function(e) {
       e.preventDefault();
 
@@ -25,8 +24,6 @@ $(document).ready(function(){
 
           $("#js-import").attr('action', '/import');
           $("#js-import-step-1").fadeOut();
-
-          $("#js-import").prepend("<div class='alert alert-light'>Please match respective columns</div>")
 
           headers_table = import_headers_table_html(data);
           $("#js-import-step-2").append(headers_table).fadeIn(800);

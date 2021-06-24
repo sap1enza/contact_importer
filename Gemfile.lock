@@ -85,6 +85,9 @@ GEM
     childprocess (3.0.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    credit_card_validations (4.1.0)
+      activemodel (>= 3, <= 6.2)
+      activesupport (>= 3, <= 6.2)
     database_cleaner-active_record (2.0.0)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
@@ -226,6 +229,7 @@ GEM
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.4.2)
@@ -239,6 +243,7 @@ DEPENDENCIES
   bootstrap (~> 5.0.1)
   byebug
   capybara (>= 3.26)
+  credit_card_validations
   database_cleaner-active_record
   factory_bot_rails
   faker
@@ -259,6 +264,7 @@ DEPENDENCIES
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers
+  will_paginate (~> 3.3.0)
 
 RUBY VERSION
    ruby 3.0.0p0
